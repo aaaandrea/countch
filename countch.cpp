@@ -24,16 +24,33 @@ int main()
     for (i = 1; it = freqx.begin(); it != freqs.end(); ++it, ++i)
     //iterator initialized by begin() on an obj, and compl when == to result of calling end()
 
+    // Each entry is a pair object,
+    // a pair object has two publically accessible fields (called "data members" in C++):
+        // first (which, for map objects, holds the key) and
+        // second (which holds the value).
         {
         switch (it->first)
+        // Some special characters: \n is newline; \r is carriage return; \t is tab.
             {
-            case '\r': cout << "\\r"; break;
+            case '\r': cout << "\\r"; break; // we send the printed representation of data to cout with <<
+            // we can "chain" data to send to cout with multiple <<
             case '\t': cout << '\\t'; break;
+            // data can be sent from cin to variables using >>
+                // eg. if we wanted to send data from cin to a str variable until
+                // we reached the end of a file we could use this while loop:
+                    // string str;
+                    // while (cin >> str)
+                    //     {
+                    //         do something with str...
+                    //     }
             case '\n': cout << "\\n"; break;
             case ' ': cout << "Space"; break;
             default: cout << it->first;
             }
         cout << "\t" << it->second << ((i%4) ? "\t" : "\n");
         }
+        // Iterators return pointers to objects,
+        // so to access the first and second fields from the current iterator pointer,
+        // we use it->first and it->second.
     //cout << freqs;
 }
