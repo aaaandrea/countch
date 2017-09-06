@@ -24,6 +24,11 @@ int main()
     for (i = 1; it = freqx.begin(); it != freqs.end(); ++it, ++i)
     //iterator initialized by begin() on an obj, and compl when == to result of calling end()
 
+    //  for most purposes, ++x is the same as x+=1, too,
+    // except the return value of this expression is the old value of x,
+    // not the new value. It's considered by some (not me) to be
+    // bad C++ style to use i++ instead of ++i in for loops and the like.
+
     // Each entry is a pair object,
     // a pair object has two publically accessible fields (called "data members" in C++):
         // first (which, for map objects, holds the key) and
